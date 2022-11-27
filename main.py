@@ -1,3 +1,6 @@
+import uvicorn
+from platformshconfig import Config
+
 from fastapi import FastAPI, Response, status
 import geojson
 import json
@@ -10,6 +13,7 @@ import time
 from fastapi.responses import HTMLResponse, JSONResponse
 
 app = FastAPI()
+config = Config()
 
 with open('countries.geojson') as f:
     gj = geojson.load(f)
@@ -93,3 +97,7 @@ def random_point_in_polygon(zone):
         else:
             p = Point(x, y)
         return affine_transform(p, transform)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=int(config.port))
