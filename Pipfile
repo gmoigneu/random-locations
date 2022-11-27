@@ -10,6 +10,7 @@ asyncmy = "*"
 aioredis = "==2.0.0a1"
 platformshconfig = "~=2.0"
 geojson = "*"
+shapely = "*"
 
 [dev-packages]
 

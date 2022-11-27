@@ -36,7 +36,7 @@ async def root():
         """
 
 
-@app.get("/locations/{country}", status_code=200)
+@app.get("/country/{country}", status_code=200)
 async def locations(country: str, response: Response, count: int = 10):
     if count > 100:
         return JSONResponse(status_code=422, content={"message": "You can only request up to 100 points."})
