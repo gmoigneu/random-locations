@@ -1,0 +1,5 @@
+openapi: 3.0.3
+info:
+  title: Faker - Locations per country
+  description: |-
+    This is an API endpoint to generate coordinates in all territories of a specific country.
